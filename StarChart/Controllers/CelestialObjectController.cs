@@ -19,7 +19,7 @@ namespace StarChart.Controllers
             _context = context;
         }
 
-        [HttpGet("{id:int}",Name ="GetById")]
+        [HttpGet("{id:int}", Name = "GetById")]
         public IActionResult GetById(int id)
         {
             var foundObject = _context.CelestialObjects.FirstOrDefault(co => co.Id == id);
@@ -51,7 +51,7 @@ namespace StarChart.Controllers
             return Ok(foundObject);
         }
         [HttpGet]
-        public IActionResult GetAll(string name)
+        public IActionResult GetAll()
         {
             var objects = _context.CelestialObjects;
 
